@@ -40,20 +40,20 @@ function partition(arr, start, end) {
   return pivotIndex;
 }
 
+function quickSort(arr) {
+  quickSortRecursive(arr, 0, arr.length - 1);
+}
+
 function quickSortRecursive(arr, start, end) {
-  // Base case or terminating case
   if (start >= end) {
     return;
   }
 
-  // Returns pivotIndex
   let index = partition(arr, start, end);
-
-  // Recursively apply the same logic to the left and right subarrays
   quickSortRecursive(arr, start, index - 1);
   quickSortRecursive(arr, index + 1, end);
 }
 
 array = [7, -2, 4, 1, 6, 5, 0, -4, 2];
-quickSortRecursive(array, 0, array.length - 1);
+quickSort(array);
 console.log(array);
