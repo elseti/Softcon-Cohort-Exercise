@@ -3,3 +3,8 @@ body{
     padding-top: 50px;
     font-family:"Comic Sans MS";
 }
+div.sth{
+    border: 4px solid aquamarine;
+    border-radius: 5px;
+    background-color: azure;
+}

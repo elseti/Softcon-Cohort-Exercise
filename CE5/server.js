@@ -18,6 +18,8 @@ const meme7= readFileSync('./src/meme7.png')
 const server= http.createServer((req, res) => {
     const url= req.url;
     console.log(url);
+
+    
     //homepage
     if(url==='/' || url==='/home.html'){
         res.writeHead(200, {'content-type': 'text/html'});
@@ -42,54 +44,59 @@ const server= http.createServer((req, res) => {
     // CSS
     else if(url==="/css/main.css"){
         res.writeHead(200, {'content-type': 'text/css'});
-        res.write(styles)
-        res.end()
+        res.write(styles);
+        res.end();
     }
+    
     // images of my memes
-    switch(url){
-        case '/src/meme1.png':
-            res.writeHead(200, {'content-type': 'image/png'});
-            res.write(meme1)
-            res.end();
-            break;
-
-            case '/src/meme1.png':
-                res.writeHead(200, {'content-type': 'image/png'});
-                res.write(meme1)
-                res.end();
-                break;
-            case '/src/meme2.png':
-                res.writeHead(200, {'content-type': 'image/png'});
-                res.write(meme2)
-                res.end();
-                break;
-            case '/src/meme3.png':
-                res.writeHead(200, {'content-type': 'image/png'});
-                res.write(meme3)
-                res.end();
-                break;
-            case '/src/meme4.png':
-                res.writeHead(200, {'content-type': 'image/png'});
-                res.write(meme4)
-                res.end();
-                break;
-            case '/src/meme5.png':
-                res.writeHead(200, {'content-type': 'image/png'});
-                res.write(meme5)
-                res.end();
-                break;
-            case '/src/meme6.png':
-                res.writeHead(200, {'content-type': 'image/png'});
-                res.write(meme6)
-                res.end();
-                break;
-            case '/src/meme7.png':
-                res.writeHead(200, {'content-type': 'image/png'});
-                res.write(meme7)
-                res.end();
-                break;
+    else if(url==='/src/meme1.png'){
+        res.writeHead(200, {'content-type': 'image/png'});
+        res.write(meme1)
+        res.end();
+    }   
+    else if(url==='/src/meme1.png'){
+        res.writeHead(200, {'content-type': 'image/png'});
+        res.write(meme1)
+        res.end();
     }
-
+    else if(url==='/src/meme2.png'){
+        res.writeHead(200, {'content-type': 'image/png'});
+        res.write(meme2)
+        res.end();
+    }
+        
+    else if(url==='/src/meme3.png'){
+        res.writeHead(200, {'content-type': 'image/png'});
+        res.write(meme3)
+        res.end();
+    }
+    else if(url==='/src/meme4.png'){
+        res.writeHead(200, {'content-type': 'image/png'});
+        res.write(meme4)
+        res.end();
+    }
+    else if(url==='/src/meme5.png'){
+        res.writeHead(200, {'content-type': 'image/png'});
+        res.write(meme5)
+        res.end();
+    }
+    else if(url==='/src/meme6.png'){
+        res.writeHead(200, {'content-type': 'image/png'});
+        res.write(meme6)
+        res.end();
+    }
+    else if(url==='/src/meme7.png'){
+        res.writeHead(200, {'content-type': 'image/png'});
+        res.write(meme7)
+        res.end();
+    }
+    else{
+        res.writeHead(404, {'content-type': 'text/html'});
+        res.write('<h1>404 not found<h1><h2>SORRY THE PAGE YOU ARE LOOKING FOR IS NOT HERE.</h2>');
+        res.end();
+    }
+    
+    
 	
 });
 
