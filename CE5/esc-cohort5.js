@@ -1,3 +1,5 @@
+const fs= require('fs');
+
 //Question 1
 function gcd(a, b){
     if(b===0){
@@ -8,6 +10,24 @@ function gcd(a, b){
     }
 }
 
+//Question 2
+function parseCSV(csvfile){
+    fs.readFile(csvfile, 'utf8', function (error, data) {
+        var dataSplit= data.split("\r\n");
+        var finalSplit= [];
+        //console.log(dataSplit, typeof(dataSplit))
+        for(let x=0; x<dataSplit.length; x++){
+            let tempList= dataSplit[x].split(",");
+            finalSplit.push(tempList);
+            //console.log(tempList);
+        }
+        //console.log(finalSplit);
+        return finalSplit;
+    });
+    
+}
+
+//console.log(parseCSV("ex5.csv"))
 
 //Question 3
 function quicksort(arr){
@@ -51,3 +71,5 @@ function printList(arr){
 // var arr1= [1, 4, 10, 3, 5, 2, 10];
 // quicksort(arr1);
 // printList(arr1);
+
+
