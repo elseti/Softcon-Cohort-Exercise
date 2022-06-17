@@ -13,11 +13,11 @@ const server = http.createServer((req, res) => {
     res.writeHead(200, { "content-type": "text/html" });
     res.write(homepage);
     res.end();
-  } else if (req.url === "/about.html") {
+  } else if (req.url === "/about") {
     res.writeHead(200, { "content-type": "text/html" });
     res.write(aboutpage);
     res.end();
-  } else if (req.url === "/contact.html") {
+  } else if (req.url === "/contact") {
     res.writeHead(200, { "content-type": "text/html" });
     res.write(contactpage);
     res.end();
