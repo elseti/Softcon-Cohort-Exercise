@@ -21,7 +21,7 @@ const server = http.createServer((req, res) => {
     res.writeHead(200, { "content-type": "text/html" });
     res.write(contactpage);
     res.end();
-  } else if (url === "/styles.css") {
+  } else if (req.url === "/styles.css") {
     res.writeHead(200, { "content-type": "text/css" });
     res.write(styles);
     res.end();
