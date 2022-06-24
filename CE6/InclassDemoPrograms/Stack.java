@@ -16,11 +16,11 @@ public class Stack<E> extends Vector<E> {
 		}
 
 		if (this.empty() != this.elements().hasMoreElements()) {
-			return false;
+			return true;
 		}
 
 		if (this.isEmpty() && this.size() != 0) {
-			return false;
+			return true;
 		}
 		
 		if (this.capacity() < this.size()) {
