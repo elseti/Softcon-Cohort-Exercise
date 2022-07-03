@@ -43,17 +43,21 @@ public class StackTestDecomposed {
 	}
 	
 	
-	@Test public void testPushPop1() {
+	@Test public void testPush() {
 		stack.push (new Integer (1));
 		boolean result = stack.repOK();
 		assertEquals (true, result);
-		
-		stack.pop();
-		result = stack.repOK();
-		assertEquals (true, result);
 	}
 	
-	@Test public void testPushPop2() {
+	@Test public void testPop() {
+		stack.push(new Integer(1));
+		stack.pop();
+		boolean result = stack.repOK();
+		assertEquals (true, result);
+	}
+		
+	
+	@Test public void testPushPop() {
 		stack.push (new Integer (1));
 		stack.pop();
 		boolean result = stack.repOK();
